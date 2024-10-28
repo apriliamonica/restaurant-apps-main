@@ -10,7 +10,7 @@ class HeaderBar extends HTMLElement {
         </div>
         <nav>
           <ul class="nav-daftar">
-            <li><a href="#home" class="nav-item" tabindex="0">Home</a></li>
+            <li><a href="#/home" class="nav-item" tabindex="0">Home</a></li>
             <li><a href="#" class="nav-item" >Favorite</a></li>
             <li>
               <a href="https://www.instagram.com/" class="nav-item">About Us</a>
