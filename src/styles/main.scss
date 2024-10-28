@@ -40,7 +40,7 @@ button {
 header {
   position: fixed;
   width: 100%;
-  z-index: 9999;
+  z-index: 1;
   top: 0;
   left: 0;
   padding-inline: auto;
@@ -90,6 +90,24 @@ button:focus {
   }
 }
 
+.nav-toggle {
+  display: flex;
+  z-index: 99;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+#drawer-button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 30px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+}
+
 .nav-daftar {
   display: flex;
   list-style: none;
@@ -127,24 +145,6 @@ button:focus {
 
 .nav-daftar.active {
   top: 80px;
-}
-
-.nav-toggle {
-  display: flex;
-  z-index: 99;
-  cursor: pointer;
-  justify-content: center;
-  align-items: center;
-}
-
-#drawer-button {
-  background-color: transparent;
-  color: white;
-  border: none;
-  font-size: 30px;
-  margin-inline: auto;
-  display: flex;
-  justify-content: center;
 }
 
 body {
@@ -479,6 +479,8 @@ main {
 
   .nav-toggle {
     display: none;
+    position: absolute;
+    top: 0;
   }
 
   .makanan-section {

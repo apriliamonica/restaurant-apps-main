@@ -12,7 +12,7 @@ const renderAllResto = (restaurants) => {
     listRestoElement.innerHTML += `
         <div class="list">
                 <div class="con-img">
-                  <img src="${resto.pictureId}" />
+                  <img src="${resto.pictureId}" alt="Hero Image" />
                 </div>
                 <div class="ratting">
                   <i class="bx bx-star"></i>
@@ -40,6 +40,6 @@ document.querySelector("#nav-toggle").addEventListener("click", () => {
 });
 
 const navItem = document.querySelectorAll(".nav-item");
-navItem.forEach((n) => n.addEventListener("click", navDaftar.classList.remove("active")));
-
-
+navItem.forEach((n) =>
+  n.addEventListener("click", navDaftar.classList.remove("active"))
+);
