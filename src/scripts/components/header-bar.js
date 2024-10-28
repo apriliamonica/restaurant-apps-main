@@ -6,7 +6,7 @@ class HeaderBar extends HTMLElement {
     this.innerHTML = `
      <div class="navbar">
         <div class="nav-title" tabindex="0">
-          <a href="#home">Muk<span>Bang</span></a>
+          <a href="">Muk<span>Bang</span></a>
         </div>
         <div class="nav-toggle" id="nav-toggle">
           <button id="drawer-button">☰</button>

@@ -35,7 +35,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 const navDaftar = document.querySelector(".nav-daftar");
-document.querySelector("#nav-toggle").addEventListener("click", () => {
+
+const menu = document.querySelector("#nav-toggle");
+console.log(menu);
+menu.addEventListener("click", () => {
+  console.log("navDaftar");
+  console.log("menu clicked");
   navDaftar.classList.toggle("active");
 });
 
