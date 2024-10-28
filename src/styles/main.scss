@@ -107,7 +107,9 @@ button:focus {
   display: flex;
   justify-content: center;
 }
-
+nav {
+  position: absolute;
+}
 .nav-daftar {
   display: flex;
   list-style: none;
@@ -410,7 +412,7 @@ main {
 
 .best-food {
   width: 100%;
-  margin-inline: 8%;
+  margin-inline: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -454,6 +456,9 @@ main {
 /* footer */
 
 @media screen and (min-width: 768px) {
+  nav {
+    position: static;
+  }
   .nav-daftar {
     flex-direction: row;
     position: static;

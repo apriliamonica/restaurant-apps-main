@@ -12,7 +12,7 @@ const renderAllResto = (restaurants) => {
     listRestoElement.innerHTML += `
         <div class="list">
                 <div class="con-img">
-                  <img src="${resto.pictureId}" alt="Hero Image" />
+                  <img src="${resto.pictureId}" alt="Gambar ${resto.nama}" />
                 </div>
                 <div class="ratting">
                   <i class="bx bx-star"></i>
