@@ -1,3 +1,6 @@
+import UrlParser from "../../routes/url-parser";
+import RestoDbSource from "../../data/themoviedb-source";
+
 const detail = {
   async render() {
     return `
@@ -6,6 +9,10 @@ const detail = {
   },
 
   async afterRender() {
+    const url = UrlParser.parseActiveUrlWithoutCombiner();
+    const movie = await RestoDbSource.detailMovie(url.id);
+    console.log(movie);
+
     // Fungsi ini akan dipanggil setelah render()
   },
 };
