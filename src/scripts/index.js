@@ -1,5 +1,6 @@
 import "regenerator-runtime"; /* for async await transpile */
 import "../styles/main.scss";
+import "../styles/responsive.scss";
 
 import "./components/footer-bar.js";
 import "./components/header-bar.js";
@@ -48,3 +49,19 @@ const navItem = document.querySelectorAll(".nav-item");
 navItem.forEach((n) =>
   n.addEventListener("click", navDaftar.classList.remove("active"))
 );
+
+import App from "./views/app";
+
+const app = new App({
+  button: document.querySelector("#hamburgerButton"),
+  drawer: document.querySelector("#navigationDrawer"),
+  content: document.querySelector("#mainContent"),
+});
+
+window.addEventListener("hashchange", () => {
+  app.renderPage();
+});
+
+window.addEventListener("load", () => {
+  app.renderPage();
+});
