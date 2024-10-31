@@ -1,9 +1,9 @@
 {
   "id": "resto-catalogue-lite-pwa-1",
   "start_url": "./index.html",
-  "name": "Resto Catalogue Lite",
+  "name": "Mukbang",
   "short_name": " Resto Lite",
-  "description": "Free Catalogue Resto for you",
+  "description": "Resto for you",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#D84315",

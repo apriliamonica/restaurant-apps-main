@@ -5,6 +5,8 @@ import "../styles/responsive.scss";
 import "./components/footer-bar.js";
 import "./components/header-bar.js";
 
+import swRegister from "./utils/sw-register";
+
 // const renderAllResto = (restaurants) => {
 //   const listRestoElement = document.querySelector(".restoran");
 //   listRestoElement.innerHTML = "";
@@ -64,4 +66,5 @@ window.addEventListener("hashchange", () => {
 
 window.addEventListener("load", () => {
   app.renderPage();
+  swRegister();
 });
