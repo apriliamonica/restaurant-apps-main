@@ -1,18 +1,19 @@
-import UrlParser from "../../routes/url-parser";
-import RestoDbSource from "../../data/themoviedb-source";
+import RestoDbSource from "../../datas/resto-api";
+import { createMovieItemTemplate } from "../templates/template-creator";
+import UrlParser from "../../routes/url.parser";
 
 const detail = {
   async render() {
     return `
-      <h2>Detail Page</h2>
+      <div id="movie" class="movie"></div>
     `;
   },
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const movie = await RestoDbSource.detailMovie(url.id);
-    console.log(movie);
-
+    const resto = await RestoDbSource.getDetailRestaurant(url.id);
+    const restoContainer = document.querySelector("#movie");
+    restoContainer.innerHTML = createMovieItemTemplate(resto);
     // Fungsi ini akan dipanggil setelah render()
   },
 };

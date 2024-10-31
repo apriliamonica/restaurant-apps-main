@@ -1,9 +1,10 @@
-import RestoDbSource from "../../data/themoviedb-source";
+import RestoDbSource from "../../datas/resto-api";
+import { createMovieItemTemplate } from "../templates/template-creator";
 
 const home = {
   async render() {
     return `
-      section class="home-section" id="home">
+      <section class="home-section" id="home">
         <div class="hero-container">
           <img src="./images/heros/hero-image_2.jpg" alt="Hero Image" />
           <div class="hero-inner">
@@ -27,7 +28,8 @@ const home = {
               <button id="favorite-btn" class="favorite-btn">Favorite</button>
             </div>
             <!-- List restaurants here -->
-            <article class="restoran"></article>
+            <article class="restoran">
+            </article>
           </div>
         </div>
       </section>
@@ -47,9 +49,11 @@ const home = {
   },
 
   async afterRender() {
-    const movies = await RestoDbSource.homeResto();
-    console.log(movies);
-
+    const Resto = await RestoDbSource.homeResto();
+    const restoContainer = document.querySelector(".restoran");
+    Resto.forEach((resto) => {
+      restoContainer.innerHTML += createMovieItemTemplate(resto);
+    });
     // Fungsi ini akan dipanggil setelah render()
   },
 };

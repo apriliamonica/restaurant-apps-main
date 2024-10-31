@@ -1,14 +1,23 @@
-import RestoDbSource from "../../data/themoviedb-source";
+import RestoDbSource from "../../datas/resto-api";
+import { createMovieItemTemplate } from "../templates/template-creator";
+
 const favorite = {
   async render() {
     return `
-      <h2>Favorite</h2>
+      <div class="content">
+        <h2 class="content__heading">Upcoming in Cinema</h2>
+        <div id="movies" class="movies">
+        </div>
+      </div>
     `;
   },
 
   async afterRender() {
-    const movies = await RestoDbSource.favoriteResto();
-    console.log(movies);
+    const Resto = await RestoDbSource.favoriteResto();
+    const restoContainer = document.querySelector("#explore");
+    Resto.forEach((resto) => {
+      restoContainer.innerHTML += createMovieItemTemplate(resto);
+    });
     // Fungsi ini akan dipanggil setelah render()
   },
 };
