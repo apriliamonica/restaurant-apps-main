@@ -2,7 +2,7 @@
   "id": "resto-catalogue-lite-pwa-1",
   "start_url": "./index.html",
   "name": "Resto Catalogue Lite",
-  "short_name": "Movie Lite",
+  "short_name": " Resto Lite",
   "description": "Free Catalogue Resto for you",
   "display": "standalone",
   "background_color": "#FFFFFF",
