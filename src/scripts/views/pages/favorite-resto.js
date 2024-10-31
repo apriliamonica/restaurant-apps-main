@@ -1,5 +1,5 @@
 import RestoDbSource from "../../datas/resto-api";
-import { createMovieItemTemplate } from "../templates/template-creator";
+import { createRestoItemTemplate } from "../templates/template-creator";
 
 const favorite = {
   async render() {
@@ -16,7 +16,7 @@ const favorite = {
     const Resto = await RestoDbSource.favoriteResto();
     const restoContainer = document.querySelector("#explore");
     Resto.forEach((resto) => {
-      restoContainer.innerHTML += createMovieItemTemplate(resto);
+      restoContainer.innerHTML += createRestoItemTemplate(resto);
     });
     // Fungsi ini akan dipanggil setelah render()
   },

@@ -1,28 +1,28 @@
 import CONFIG from "../../globals/config";
 
-// const createMovieDetailTemplate = (movie) => `
-//   <h2 class="movie__title">${movie.title}</h2>
-//   <img class="movie__poster" src="${
-//     CONFIG.BASE_IMAGE_URL + movie.poster_path
-//   }" alt="${movie.title}" />
-//   <div class="movie__info">
-//     <h3>Information</h3>
-//     <h4>Tagline</h4>
-//     <p>${movie.tagline}</p>
-//     <h4>Release Date</h4>
-//     <p>${movie.release_date}</p>
-//     <h4>Duration</h4>
-//     <p>${movie.runtime} minutes</p>
-//     <h4>Rating</h4>
-//     <p>${movie.vote_average}</p>
-//   </div>
-//   <div class="movie__overview">
-//     <h3>Overview</h3>
-//     <p>${movie.overview}</p>
-//   </div>
-// `;
+const createRestoDetailTemplate = (resto) => `
+  <h2 class="movie__title">${resto.title}</h2>
+  <img class="movie__poster" src="${
+    CONFIG.MEDIUM_IMAGE_URL + resto.poster_path
+  }" alt="${resto.title}" />
+  <div class="movie__info">
+    <h3>Information</h3>
+    <h4>Tagline</h4>
+    <p>${resto.tagline}</p>
+    <h4>Release Date</h4>
+    <p>${resto.release_date}</p>
+    <h4>Duration</h4>
+    <p>${resto.runtime} minutes</p>
+    <h4>Rating</h4>
+    <p>${resto.vote_average}</p>
+  </div>
+  <div class="movie__overview">
+    <h3>Overview</h3>
+    <p>${resto.overview}</p>
+  </div>
+`;
 
-const createMovieItemTemplate = (resto) => `
+const createRestoItemTemplate = (resto) => `
    <div class="list">
                <div class="con-img">
                    <img src="${
@@ -41,5 +41,4 @@ const createMovieItemTemplate = (resto) => `
               </div>
 `;
 
-export { createMovieItemTemplate };
-//  createMovieDetailTemplate;
+export { createRestoItemTemplate, createRestoDetailTemplate };
