@@ -5,6 +5,7 @@ const CONFIG = {
   MEDIUM_IMAGE_URL: "https://restaurant-api.dicoding.dev/images/medium/",
   LARGE_IMAGE_URL: "https://restaurant-api.dicoding.dev/images/large/",
   DEFAULT_LANGUAGE: "en-us",
+  CACHE_NAME: "Mamen-Resto",
 };
 
 export default CONFIG;
