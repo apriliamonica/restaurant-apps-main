@@ -1,5 +1,5 @@
-import RestoDbSource from "../../datas/resto-api";
-import { createRestoItemTemplate } from "../templates/template-creator";
+import RestoDbSource from '../../datas/resto-api';
+import { createRestoItemTemplate } from '../templates/template-creator';
 
 const home = {
   async render() {
@@ -50,11 +50,10 @@ const home = {
 
   async afterRender() {
     const Resto = await RestoDbSource.homeResto();
-    const restoContainer = document.querySelector(".restoran");
+    const restoContainer = document.querySelector('.restoran');
     Resto.forEach((resto) => {
       restoContainer.innerHTML += createRestoItemTemplate(resto);
     });
-    // Fungsi ini akan dipanggil setelah render()
   },
 };
 

@@ -13,8 +13,8 @@ class HeaderBar extends HTMLElement {
         </div>
         <nav>
           <ul class="nav-daftar">
-            <li><a href="/" class="nav-item" tabindex="0">Home</a></li>
-            <li><a href="#" class="nav-item" >Favorite</a></li>
+            <li><a href="#/home" class="nav-item" tabindex="0">Home</a></li>
+            <li><a href="#/favorite" class="nav-item" >Favorite</a></li>
             <li>
               <a href="https://github.com/apriliamonica" class="nav-item">About Us</a>
             </li>
@@ -25,4 +25,4 @@ class HeaderBar extends HTMLElement {
   }
 }
 
-customElements.define("header-bar", HeaderBar);
+customElements.define('header-bar', HeaderBar);

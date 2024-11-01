@@ -1,10 +1,10 @@
-import CONFIG from "../../globals/config";
+import CONFIG from '../../globals/config';
 
 const createRestoDetailTemplate = (resto) => `
   <h2 class="movie__title">${resto.title}</h2>
   <img class="movie__poster" src="${
-    CONFIG.MEDIUM_IMAGE_URL + resto.poster_path
-  }" alt="${resto.title}" />
+  CONFIG.MEDIUM_IMAGE_URL + resto.poster_path
+}" alt="${resto.title}" />
   <div class="movie__info">
     <h3>Information</h3>
     <h4>Tagline</h4>
@@ -26,8 +26,8 @@ const createRestoItemTemplate = (resto) => `
    <div class="list">
                <div class="con-img">
                    <img src="${
-                     CONFIG.MEDIUM_IMAGE_URL + resto.pictureId
-                   }" alt="Gambar ${resto.nama}" />
+  CONFIG.MEDIUM_IMAGE_URL + resto.pictureId
+}" alt="Gambar ${resto.nama}" />
                 </div>
                 <div class="ratting">
                   <i class="bx bx-star"></i>

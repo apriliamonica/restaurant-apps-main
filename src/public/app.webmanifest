@@ -1,8 +1,8 @@
 {
-  "id": "resto-catalogue-lite-pwa-1",
+  "id": "muk-bang-pwa-1",
   "start_url": "./index.html",
-  "name": "Mukbang",
-  "short_name": " Resto Lite",
+  "name": "Mukbang NJO",
+  "short_name": "Mukbang",
   "description": "Resto for you",
   "display": "standalone",
   "background_color": "#FFFFFF",
