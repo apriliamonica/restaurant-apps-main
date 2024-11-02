@@ -36,6 +36,15 @@ module.exports = {
       template: path.resolve(__dirname, 'src/templates/index.html'),
     }),
 
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/public'),
+          to: path.resolve(__dirname, 'dist'),
+        },
+      ],
+    }),
+
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: './sw.bundle.js',
       runtimeCaching: [
@@ -45,6 +54,36 @@ module.exports = {
           handler: 'StaleWhileRevalidate',
           options: {
             cacheName: 'mukbangdb-api',
+          },
+        },
+        {
+          urlPattern: ({ url }) =>
+            url.href.startsWith(
+              'https://restaurant-api.dicoding.dev/images/small/<pictureId>'
+            ),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'small-image-api',
+          },
+        },
+        {
+          urlPattern: ({ url }) =>
+            url.href.startsWith(
+              'https://restaurant-api.dicoding.dev/images/medium/<pictureId>'
+            ),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'medium-image-api',
+          },
+        },
+        {
+          urlPattern: ({ url }) =>
+            url.href.startsWith(
+              'https://restaurant-api.dicoding.dev/images/large/<pictureId>'
+            ),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'large-image-api',
           },
         },
       ],

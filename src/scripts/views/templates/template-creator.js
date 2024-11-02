@@ -1,34 +1,41 @@
 import CONFIG from '../../globals/config';
 
 const createRestoDetailTemplate = (resto) => `
-  <h2 class="movie__title">${resto.title}</h2>
-  <img class="movie__poster" src="${
-  CONFIG.MEDIUM_IMAGE_URL + resto.poster_path
-}" alt="${resto.title}" />
-  <div class="movie__info">
-    <h3>Information</h3>
-    <h4>Tagline</h4>
-    <p>${resto.tagline}</p>
-    <h4>Release Date</h4>
-    <p>${resto.release_date}</p>
-    <h4>Duration</h4>
-    <p>${resto.runtime} minutes</p>
-    <h4>Rating</h4>
-    <p>${resto.vote_average}</p>
-  </div>
-  <div class="movie__overview">
-    <h3>Overview</h3>
-    <p>${resto.overview}</p>
-  </div>
+  <article class="detail">
+              <div class="detail-title">
+                <h2>${resto.name}</h2>
+              </div>
+              <div class="detail-image">
+                <img src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}" alt="${
+  resto.name
+}" />
+              </div>
+              <div class="detail-info">
+                <p>${this.resto.city}</p>
+                <h3><a href="/detail/${this.resto.id}"${
+  this.resto.name
+}</a></h3>
+                <div class="ratting">
+                  <i class="bx bx-star"></i>
+                  <i>${resto.rating}</i>
+                </div>
+                <div class="detail-description">
+                  <p>${this.resto.des}</p>
+                </div>
+              </div>
+              <div class="restaurant__reviews">
+                <h4>Reviews</h4>
+                <ul id="reviews-list"></ul>
+              </div>
+            </article>
 `;
 
 const createRestoItemTemplate = (resto) => `
    <div class="list">
                <div class="con-img">
-                   <img src="${
-  CONFIG.MEDIUM_IMAGE_URL + resto.pictureId
-}" alt="Gambar ${resto.nama}" />
-                </div>
+              <img src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}" alt="${
+  resto.name
+}" />
                 <div class="ratting">
                   <i class="bx bx-star"></i>
                   <i>${resto.rating}</i>
@@ -41,4 +48,20 @@ const createRestoItemTemplate = (resto) => `
               </div>
 `;
 
-export { createRestoItemTemplate, createRestoDetailTemplate };
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this movie" id="likeButton" class="like">
+     <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
+
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this movie" id="likeButton" class="like">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
+export {
+  createRestoItemTemplate,
+  createRestoDetailTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
+};

@@ -7,12 +7,12 @@ class RestoDbSource {
     return responseJson.restaurants;
   }
 
-  static async detailMovie(id) {
+  static async detaiResto(id) {
     const response = await fetch(API_ENDPOINT.DETAIL(id));
     return response.json();
   }
 
-  static async favoriteRestaurant() {
+  static async favoriteResto() {
     const response = await fetch(API_ENDPOINT.DETAIL);
     const responseJson = await response.json();
     return responseJson.restaurants;

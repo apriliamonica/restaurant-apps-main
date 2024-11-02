@@ -1,8 +1,8 @@
 {
   "id": "muk-bang-pwa-1",
   "start_url": "./index.html",
-  "name": "Mukbang NJO",
-  "short_name": "Mukbang",
+  "name": "Mukbang",
+  "short_name": "mkbg",
   "description": "Resto for you",
   "display": "standalone",
   "background_color": "#FFFFFF",
