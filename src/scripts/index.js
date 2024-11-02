@@ -10,7 +10,7 @@ import swRegister from './utils/sw-register';
 import App from './views/app';
 
 const app = new App({
-  button: document.querySelector('#nav-toggle'),
+  button: document.querySelector('#drawer-button'),
   drawer: document.querySelector('.nav-daftar'),
   content: document.querySelector('#maincontent'),
 });

@@ -11,16 +11,12 @@ const createRestoDetailTemplate = (resto) => `
 }" />
               </div>
               <div class="detail-info">
-                <p>${this.resto.city}</p>
-                <h3><a href="/detail/${this.resto.id}"${
-  this.resto.name
-}</a></h3>
+                <h3>${resto.city}</h3>           
                 <div class="ratting">
-                  <i class="bx bx-star"></i>
                   <i>${resto.rating}</i>
                 </div>
                 <div class="detail-description">
-                  <p>${this.resto.des}</p>
+                  <p>${resto.description}</p>
                 </div>
               </div>
               <div class="restaurant__reviews">
@@ -36,12 +32,13 @@ const createRestoItemTemplate = (resto) => `
               <img src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}" alt="${
   resto.name
 }" />
+</div>
                 <div class="ratting">
                   <i class="bx bx-star"></i>
                   <i>${resto.rating}</i>
                 </div>
                 <div class="list-info">
-                  <h3 tabindex="0">${resto.name}</h3>
+                <h3><a href="/#/detail/${resto.id}">${resto.name}</a></h3>
                   <h2>${resto.city}</h2>
                   <p>${resto.description}</p>
                 </div>

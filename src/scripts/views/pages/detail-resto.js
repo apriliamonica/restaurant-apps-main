@@ -1,5 +1,4 @@
 import RestoDbSource from '../../datas/resto-api';
-import { createRestoItemTemplate } from '../templates/template-creator';
 import UrlParser from '../../routes/url.parser';
 import {
   createRestoDetailTemplate,
@@ -15,11 +14,11 @@ const Detail = {
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const resto = await RestoDbSource.getDetailRestaurant(url.id);
+    const resto = await RestoDbSource.detailResto(url.id);
     const restoContainer = document.querySelector('.detail');
-    const likeButtonContainer = document.querySelector('#likeButtonContainer');
+    restoContainer.innerHTML = createRestoDetailTemplate(resto);
 
-    restoContainer.innerHTML = createRestoItemTemplate(resto);
+    const likeButtonContainer = document.querySelector('#likeButtonContainer');
     likeButtonContainer.innerHTML = createLikeButtonTemplate();
   },
 };
