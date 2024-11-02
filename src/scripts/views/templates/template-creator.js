@@ -11,6 +11,9 @@ const createRestoDetailTemplate = (resto) => `
 }" />
               </div>
               <div class="detail-info">
+                <img src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}" alt="${
+  resto.name
+}" />
                 <h3>${resto.city}</h3>           
                 <div class="ratting">
                   <i>${resto.rating}</i>
@@ -21,7 +24,8 @@ const createRestoDetailTemplate = (resto) => `
               </div>
               <div class="restaurant__reviews">
                 <h4>Reviews</h4>
-                <ul id="reviews-list"></ul>
+                <ul id="reviews-list">
+                </ul>
               </div>
             </article>
 `;
