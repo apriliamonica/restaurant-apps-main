@@ -2,32 +2,78 @@ import CONFIG from '../../globals/config';
 
 const createRestoDetailTemplate = (resto) => `
   <article class="detail">
-              <div class="detail-title">
-                <h2>${resto.name}</h2>
-              </div>
               <div class="detail-image">
                 <img src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}" alt="${
   resto.name
 }" />
               </div>
+              <div class="detail-title">
+                <h2>${resto.name}</h2>
+              </div>
               <div class="detail-info">
-                <img src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}" alt="${
-  resto.name
-}" />
-                <h3>${resto.city}</h3>           
+                <div class="address">
+                  <h3 class="details">Alamat</h3>
+                  <p>${resto.address}</p>
+                </div>
+                <div class="city">
+                  <h3 class="details">Kota</h3>
+                   <p>${resto.city}</p>
+                </div>           
                 <div class="ratting">
+                <h3 class="details">Ratting</h3>
                   <i>${resto.rating}</i>
                 </div>
+                <div class="categories-resto">
+                <h3 class="details">Categories</h3>
+                <p>${resto.categories}</p>
+              </div>
                 <div class="detail-description">
+                <h3 class="details">Deskripsi</h3>
                   <p>${resto.description}</p>
                 </div>
               </div>
-              <div class="restaurant__reviews">
-                <h4>Reviews</h4>
-                <ul id="reviews-list">
-                </ul>
-              </div>
             </article>
+
+  <article class="detail-menu">
+        <div class="menu">
+          <h3>Makanan</h3>
+        <div class="list-menu" id="menu-makanan">${resto.foods}</div>
+        <div class="menu">
+          <h3>Minuman</h3>
+          <div class="list-menu" id="menu-minuman">${resto.drinks}</div>
+        </div>
+  </article>
+
+      <article class="riview-resto">
+           <div class="riview-container">
+        <h1>Form Review</h1>
+        <form id="restoForm" autocomplete="off">
+          <div>
+            <label class="label-judul" for="title">Nama</label>
+            <input
+            id="nama"
+              name="nama"
+              type="text"
+              required
+              placeholder="nama"
+              minlength="5"
+            />
+          </div>
+          <div>
+            <label class="label-judul" for="description">Riview</label>
+            <textarea
+            id="riview"
+              name="Riview"
+              required
+              placeholder="riview"
+              minlength="10"
+            ></textarea>
+          </div>
+          <button id="FormSubmit" type="submit">Kirim</button>
+        </form>
+    </div>
+      </article>
+            
 `;
 
 const createRestoItemTemplate = (resto) => `

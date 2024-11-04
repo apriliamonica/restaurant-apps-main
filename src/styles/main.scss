@@ -397,57 +397,204 @@ main {
 }
 
 .detail {
-  width: 100%;
-}
-
-.detail-image {
-  position: relative;
   display: flex;
-  align-items: center;
-  text-align: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  min-height: 750px;
+  box-sizing: border-box;
   width: 100%;
-
-  img {
-    position: absolute;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0;
-  }
-}
-
-.detail-info {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  padding: 2% 8%;
-  background-color: rgb(202, 82, 13);
-  color: #ffffff;
-  border-radius: 50px;
-
-  img {
-    border-radius: 50%;
-    width: 50%;
+  height: 100%;
+  color: rgb(0, 0, 0);
+  .detail-image {
+    overflow: hidden;
+    width: 15rem;
     height: auto;
-    margin-top: -55px;
-    z-index: 1;
-    transition: transform 0.3s ease;
-    &:hover {
-      transform: scale(1.05);
+    img {
+      border-radius: 10px;
+      margin-top: 7rem;
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.05);
+      }
     }
   }
 }
 
-.restaurant__reviews {
+/* detail */
+.detail {
+  overflow: hidden;
+  max-width: 800px;
+  margin: auto;
+  color: #ffffff;
+}
+
+.detail-image img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #eaeaea;
+}
+
+.detail-title {
+  gap: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgb(0, 0, 0);
+  border-bottom: 2px solid rgb(196, 129, 53);
+  padding: 10px 20px;
+  display: inline;
+
+  h2 {
+    font-size: 24px;
+    color: rgb(243, 170, 87);
+  }
+}
+
+.detail-info {
+  padding: 15px;
+}
+
+.details {
+  font-size: 18px;
+  color: #e7973b;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 10px;
+  gap: 2rem;
+}
+
+.address,
+.city,
+.ratting,
+.categories-resto,
+.detail-description {
+  margin-bottom: 15px;
+}
+
+.address p,
+.city p {
+  margin: 5px 0;
+}
+
+.ratting i {
+  font-weight: bold;
+  color: #ff9800;
+}
+
+.categories-resto p {
+  margin: 5px 0;
+}
+
+.detail-description p {
+  line-height: 1.6;
+}
+
+.detail-menu {
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.menu {
+  margin-bottom: 20px;
+  h3 {
+    font-size: 24px;
+    color: #e7973b;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 10px;
+  }
+}
+
+.list-menu {
+  margin-top: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  color: #000000;
+  padding: 8px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.list-menu div:last-child {
+  border-bottom: none;
+}
+
+/* form riview */
+
+.riview-container {
+  background: #e7973b;
+  padding: 16px;
+  color: white;
+  width: 100%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+button,
+input {
+  padding: 0.5rem 1rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+label {
+  font-weight: 400;
+}
+#restoForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: rgb(44, 44, 44);
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 3%;
+}
+
+#nama {
+  padding: 1rem 1rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+  border: none;
+  outline: none;
+}
+
+#riview {
+  width: 100%;
+  height: 10rem;
+  padding: 1rem 1rem;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.label-judul {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+#FormSubmit {
+  background: rgb(243, 232, 138);
+  border: 2px solid black;
+  border-radius: 10px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  align-self: end;
+}
+
+#FormSubmit:hover {
+  background: rgb(243, 232, 138);
+  color: rgb(211, 133, 30);
+}
+#FormSubmit:active {
+  background: rgb(248, 230, 69);
 }
 
 /* explore */
