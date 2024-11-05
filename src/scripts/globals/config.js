@@ -8,7 +8,7 @@ const CONFIG = {
   CACHE_NAME: 'Mukbang-V1',
   DATABASE_NAME: 'Mukbang-database',
   DATABASE_VERSION: 1,
-  OBJECT_STORE_NAME: 'mukbang-object',
+  OBJECT_STORE_NAME: 'mukbang',
 };
 
 export default CONFIG;

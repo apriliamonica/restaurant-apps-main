@@ -34,13 +34,14 @@ const createRestoDetailTemplate = (resto) => `
               </div>
             </article>
 
-  <article class="detail-menu">
-        <div class="menu">
+            <article class="detail-menu">
+      <div class="menu">
           <h3>Makanan</h3>
-        <div class="list-menu" id="menu-makanan">${resto.foods}</div>
+        <div class="list-menu" id="menu-makanan">
+        </div>
         <div class="menu">
           <h3>Minuman</h3>
-          <div class="list-menu" id="menu-minuman">${resto.drinks}</div>
+          <div class="list-menu" id="menu-minuman"></div>
         </div>
   </article>
 
@@ -49,7 +50,7 @@ const createRestoDetailTemplate = (resto) => `
         <h1>Form Review</h1>
         <form id="restoForm" autocomplete="off">
           <div>
-            <label class="label-judul" for="title">Nama</label>
+            <label class="label-judul" for="nama">Nama</label>
             <input
             id="nama"
               name="nama"
@@ -60,7 +61,7 @@ const createRestoDetailTemplate = (resto) => `
             />
           </div>
           <div>
-            <label class="label-judul" for="description">Riview</label>
+            <label class="label-judul" for="riview">Riview</label>
             <textarea
             id="riview"
               name="Riview"
@@ -72,8 +73,11 @@ const createRestoDetailTemplate = (resto) => `
           <button id="FormSubmit" type="submit">Kirim</button>
         </form>
     </div>
-      </article>
-            
+      </article>       
+`;
+
+const createMenusTemplate = (menus) => `
+  <p>${menus}</p>
 `;
 
 const createRestoItemTemplate = (resto) => `
@@ -111,4 +115,5 @@ export {
   createRestoDetailTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
+  createMenusTemplate,
 };

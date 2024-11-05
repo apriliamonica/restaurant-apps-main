@@ -1,17 +1,17 @@
-import RestoDbSource from '../../datas/resto-api';
+import FavoriteRestoIdb from '../../../public/data/favorite-resto-idb';
 import { createRestoItemTemplate } from '../templates/template-creator';
 
 const favorite = {
   async render() {
     return `
-      <div>
-      
-      <div>
+      <section id="explore" >
+
+      <section>
     `;
   },
 
   async afterRender() {
-    const Resto = await RestoDbSource.favoriteResto();
+    const Resto = await FavoriteRestoIdb.getAllResto();
     const restoContainer = document.querySelector('#explore');
     Resto.forEach((resto) => {
       restoContainer.innerHTML += createRestoItemTemplate(resto);

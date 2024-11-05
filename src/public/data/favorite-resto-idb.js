@@ -1,5 +1,5 @@
 import { openDB } from 'idb';
-import CONFIG from '../globals/config';
+import CONFIG from '../../scripts/globals/config';
 
 const { DATABASE_NAME, DATABASE_VERSION, OBJECT_STORE_NAME } = CONFIG;
 
@@ -16,7 +16,7 @@ const FavoriteRestoIdb = {
   async getAllResto() {
     return (await dbPromise).getAll(OBJECT_STORE_NAME);
   },
-  async putResto(movie) {
+  async putResto(resto) {
     return (await dbPromise).put(OBJECT_STORE_NAME, resto);
   },
   async deleteResto(id) {

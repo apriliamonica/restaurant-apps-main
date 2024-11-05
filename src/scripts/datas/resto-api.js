@@ -21,8 +21,8 @@ class RestoDbSource {
       customerReviews: restaurant.customerReviews.map((customer) => customer),
       pictureId: restaurant.pictureId,
       categories: restaurant.categories.map((categori) => categori.name),
-      foods: restaurant.menus.foods.map((food) => food.name),
-      drinks: restaurant.menus.drinks.map((drink) => drink.name), // Assuming this is a new property in the API response
+      foods: restaurant.menus.foods,
+      drinks: restaurant.menus.drinks,
     };
   }
 
@@ -31,6 +31,28 @@ class RestoDbSource {
     const responseJson = await response.json();
     return responseJson.restaurants;
   }
+
+  // static async createriview(riview) {
+  //   try {
+  //     const options = {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         id: riview.id,
+  //         name: riview.name,
+  //         review: riview.review,
+  //       }),
+  //   }
+  //     const responseJson = await response.json();
+  //     console.log(responseJson);
+
+  //     return responseJson;
+  //   } catch (error) {
+  //     alert('gagal menambahkan notes');
+  //   }
+  // }
 }
 
 export default RestoDbSource;
