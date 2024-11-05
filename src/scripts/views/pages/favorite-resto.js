@@ -5,7 +5,6 @@ const favorite = {
   async render() {
     return `
       <section id="explore" >
-
       <section>
     `;
   },

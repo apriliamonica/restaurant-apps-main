@@ -4,7 +4,6 @@ import '../styles/responsive.scss';
 
 import './components/footer-bar.js';
 import './components/header-bar.js';
-
 import swRegister from './utils/sw-register';
 
 import App from './views/app';

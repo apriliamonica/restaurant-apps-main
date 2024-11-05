@@ -61,24 +61,31 @@ const createRestoDetailTemplate = (resto) => `
             />
           </div>
           <div>
-            <label class="label-judul" for="riview">Riview</label>
+            <label class="label-judul" for="review">Review</label>
             <textarea
-            id="riview"
-              name="Riview"
+            id="review"
+              name="Review"
               required
-              placeholder="riview"
+              placeholder="review"
               minlength="10"
             ></textarea>
           </div>
           <button id="FormSubmit" type="submit">Kirim</button>
         </form>
     </div>
+     <div class="review-list"></div>
       </article>       
 `;
 
 const createMenusTemplate = (menus) => `
   <p>${menus}</p>
 `;
+
+const createReviewTemplate = (review) => `
+  <div>${review.name}</div> 
+  <div>${review.review}</div> 
+  <div>${review.date}</div> 
+  `;
 
 const createRestoItemTemplate = (resto) => `
    <div class="list">
@@ -116,4 +123,5 @@ export {
   createLikeButtonTemplate,
   createLikedButtonTemplate,
   createMenusTemplate,
+  createReviewTemplate,
 };

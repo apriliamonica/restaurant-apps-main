@@ -18,7 +18,7 @@ class RestoDbSource {
       rating: restaurant.rating,
       address: restaurant.address,
       city: restaurant.city,
-      customerReviews: restaurant.customerReviews.map((customer) => customer),
+      customerReviews: restaurant.customerReviews,
       pictureId: restaurant.pictureId,
       categories: restaurant.categories.map((categori) => categori.name),
       foods: restaurant.menus.foods,
@@ -32,7 +32,7 @@ class RestoDbSource {
     return responseJson.restaurants;
   }
 
-  static async createriview(riview) {
+  static async createriview(review) {
     try {
       const options = {
         method: 'POST',
@@ -40,12 +40,12 @@ class RestoDbSource {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          id: riview.id,
-          name: riview.name,
-          review: riview.review,
+          id: review.id,
+          name: review.name,
+          review: review.review,
         }),
       };
-      const response = await fetch(API_ENDPOINT.RIVIEW, options);
+      const response = await fetch(API_ENDPOINT.REVIEW, options);
       const responseJson = await response.json();
       return responseJson.customerReviews;
     } catch (error) {
@@ -53,11 +53,11 @@ class RestoDbSource {
     }
   }
 
-  static getRiview(id, name, riview, date) {
+  static getRiview(id, name, review, date) {
     return {
       id,
       name,
-      review: riview,
+      review,
       date,
     };
   }

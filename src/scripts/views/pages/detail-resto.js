@@ -1,8 +1,9 @@
 import RestoDbSource from '../../datas/resto-api';
-import UrlParser from '../../routes/url.parser';
+import UrlParser from '../../routes/url-parser';
 import {
   createRestoDetailTemplate,
   createMenusTemplate,
+  createReviewTemplate,
 } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 const Detail = {
@@ -20,8 +21,10 @@ const Detail = {
     restoContainer.innerHTML = createRestoDetailTemplate(restodetail);
     const makanan = restodetail.foods;
     const minuman = restodetail.drinks;
+    const customer = restodetail.customerReviews;
     const foodContainer = document.querySelector('#menu-makanan');
     const drinksContainer = document.querySelector('#menu-minuman');
+    const customerContainer = document.querySelector('.review-list');
 
     makanan.forEach((makan) => {
       foodContainer.innerHTML += createMenusTemplate(makan.name);
@@ -30,21 +33,28 @@ const Detail = {
       drinksContainer.innerHTML += createMenusTemplate(minum.name);
     });
 
-    const form = document.querySelector('.riview-resto');
+    customer.forEach((review) => {
+      customerContainer.innerHTML += createReviewTemplate(review);
+    });
+
+    const form = document.querySelector('#restoForm');
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       const id = restodetail.id;
-      const nama = document.querySelector('#nama');
-      const review = document.querySelector('#review');
+      const nama = document.querySelector('#nama').value;
+      const review = document.querySelector('#review').value;
       const date = new Date();
 
       const tambahRiview = RestoDbSource.getRiview(id, nama, review, date);
 
-      await RestoDbSource.addReview(tambahRiview);
-      const newriview = await RestoDbSource.detailResto(url.id);
-      restoContainer.innerHTML = '';
-      restoContainer.innerHTML = createRestoDetailTemplate(newriview);
-      form.reset();
+      await RestoDbSource.createriview(tambahRiview);
+      const newreview = await RestoDbSource.detailResto(url.id);
+      const reviewlist = newreview.customerReviews;
+      customerContainer.innerHTML = '';
+
+      reviewlist.forEach((review) => {
+        customerContainer.innerHTML += createReviewTemplate(review);
+      });
     });
 
     LikeButtonInitiator.init({
