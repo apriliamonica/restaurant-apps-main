@@ -30,6 +30,23 @@ const Detail = {
       drinksContainer.innerHTML += createMenusTemplate(minum.name);
     });
 
+    const form = document.querySelector('.riview-resto');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const id = restodetail.id;
+      const nama = document.querySelector('#nama');
+      const review = document.querySelector('#review');
+      const date = new Date();
+
+      const tambahRiview = RestoDbSource.getRiview(id, nama, review, date);
+
+      await RestoDbSource.addReview(tambahRiview);
+      const newriview = await RestoDbSource.detailResto(url.id);
+      restoContainer.innerHTML = '';
+      restoContainer.innerHTML = createRestoDetailTemplate(newriview);
+      form.reset();
+    });
+
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       resto: {

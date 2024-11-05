@@ -32,27 +32,35 @@ class RestoDbSource {
     return responseJson.restaurants;
   }
 
-  // static async createriview(riview) {
-  //   try {
-  //     const options = {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({
-  //         id: riview.id,
-  //         name: riview.name,
-  //         review: riview.review,
-  //       }),
-  //   }
-  //     const responseJson = await response.json();
-  //     console.log(responseJson);
+  static async createriview(riview) {
+    try {
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          id: riview.id,
+          name: riview.name,
+          review: riview.review,
+        }),
+      };
+      const response = await fetch(API_ENDPOINT.RIVIEW, options);
+      const responseJson = await response.json();
+      return responseJson.customerReviews;
+    } catch (error) {
+      alert(error.massage);
+    }
+  }
 
-  //     return responseJson;
-  //   } catch (error) {
-  //     alert('gagal menambahkan notes');
-  //   }
-  // }
+  static getRiview(id, name, riview, date) {
+    return {
+      id,
+      name,
+      review: riview,
+      date,
+    };
+  }
 }
 
 export default RestoDbSource;
