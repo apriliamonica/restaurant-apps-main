@@ -4,8 +4,14 @@ import { createRestoItemTemplate } from '../templates/template-creator';
 const favorite = {
   async render() {
     return `
-      <section id="explore" >
-      <section>
+      <section class="explore-section" id="explore">
+        <div class="explore-container">
+          <div id="container-resto">
+            <article class="restoran">
+            </article>
+          </div>
+        </div>
+      </section>
     `;
   },
 

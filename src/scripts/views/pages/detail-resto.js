@@ -5,6 +5,7 @@ import {
   createMenusTemplate,
   createReviewTemplate,
 } from '../templates/template-creator';
+import Utils from '../../utils/utils';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 const Detail = {
   async render() {
@@ -45,7 +46,7 @@ const Detail = {
       const review = document.querySelector('#review').value;
       const date = new Date();
 
-      const tambahRiview = RestoDbSource.getRiview(id, nama, review, date);
+      const tambahRiview = Utils.getRiview(id, nama, review, date);
 
       await RestoDbSource.createriview(tambahRiview);
       const newreview = await RestoDbSource.detailResto(url.id);

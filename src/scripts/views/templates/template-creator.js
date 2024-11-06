@@ -46,7 +46,7 @@ const createRestoDetailTemplate = (resto) => `
   </article>
 
       <article class="riview-resto">
-           <div class="riview-container">
+        <div class="riview-container">
         <h1>Form Review</h1>
         <form id="restoForm" autocomplete="off">
           <div>
@@ -73,7 +73,10 @@ const createRestoDetailTemplate = (resto) => `
           <button id="FormSubmit" type="submit">Kirim</button>
         </form>
     </div>
-     <div class="review-list"></div>
+     <div class="review-list">
+       <h3>Customer Review</h3>
+        <div id="loading" class="loading...">Loading</div>
+     </div>
       </article>       
 `;
 
@@ -82,9 +85,11 @@ const createMenusTemplate = (menus) => `
 `;
 
 const createReviewTemplate = (review) => `
-  <div>${review.name}</div> 
-  <div>${review.review}</div> 
-  <div>${review.date}</div> 
+  <div class="review-item">
+  <h4>${review.name}</h4> 
+  <p>${review.review}</p> 
+  <p>${review.date}</p> 
+  </div>
   `;
 
 const createRestoItemTemplate = (resto) => `

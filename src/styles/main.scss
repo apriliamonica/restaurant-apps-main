@@ -266,35 +266,6 @@ main {
   margin: 0 8%;
 }
 
-.btn-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  border: none;
-}
-
-.btn-item button {
-  box-sizing: border-box;
-  min-width: 44px;
-  min-height: 44px;
-  border-radius: 10px;
-  background-color: #352922;
-  color: #fff;
-  padding: 10px 16px;
-  transition: background-color 0.3s ease;
-  font-weight: 700;
-  font-size: 16px;
-  font-family: Arial, sans-serif;
-}
-
-.favorite-btn:hover {
-  background: rgb(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  color: #ffffff;
-  transition: background-color 0.3s ease;
-}
-
 .restoran {
   width: 100%;
   display: grid;
@@ -440,6 +411,7 @@ main {
     color: rgb(243, 170, 87);
   }
 }
+
 .detail-info {
   border: 2px solid #f0811a;
   border-radius: 10px;
@@ -589,11 +561,48 @@ textarea {
 }
 
 #FormSubmit:hover {
-  background: rgb(247, 244, 224);
-  color: rgb(211, 133, 30);
+  background: rgb(255, 158, 31);
+  color: rgb(255, 255, 255);
 }
 #FormSubmit:active {
-  background: rgb(255, 142, 36);
+  background: rgb(63, 56, 50);
+  color: rgb(196, 196, 196);
+}
+
+#loading {
+  margin-block: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.review-list {
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #272727;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgb(0, 0, 0, 0.1);
+  h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+  }
+}
+
+.review-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid #333;
+
+  h4 {
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  p {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
 }
 
 /* explore */

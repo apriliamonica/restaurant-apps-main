@@ -1,4 +1,8 @@
 import API_ENDPOINT from '../globals/api-endpoint';
+import Utils from '../utils/utils';
+
+const loading = document.querySelector('#loading');
+const reviewList = document.querySelector('.review-list');
 
 class RestoDbSource {
   static async homeResto() {
@@ -33,6 +37,8 @@ class RestoDbSource {
   }
 
   static async createriview(review) {
+    Utils.hideLoading(reviewList);
+    Utils.showLoading(loading);
     try {
       const options = {
         method: 'POST',
@@ -46,20 +52,15 @@ class RestoDbSource {
         }),
       };
       const response = await fetch(API_ENDPOINT.REVIEW, options);
+      await Utils.sleep();
       const responseJson = await response.json();
       return responseJson.customerReviews;
     } catch (error) {
       alert(error.massage);
+    } finally {
+      Utils.hideLoading(loading);
+      Utils.showLoading(reviewList);
     }
-  }
-
-  static getRiview(id, name, review, date) {
-    return {
-      id,
-      name,
-      review,
-      date,
-    };
   }
 }
 
