@@ -526,10 +526,10 @@ label {
 }
 
 #nama {
-  padding: 1rem 1rem;
+  min-width: 44px;
+  min-height: 44px;
   border: 2px solid black;
   border-radius: 5px;
-  width: 100%;
 }
 
 textarea {
@@ -552,6 +552,8 @@ textarea {
 }
 
 #FormSubmit {
+  min-width: 44px;
+  min-height: 44px;
   background: rgb(247, 244, 224);
   color: rgb(211, 133, 30);
   border: 2px solid black;

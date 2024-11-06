@@ -75,7 +75,6 @@ const createRestoDetailTemplate = (resto) => `
     </div>
      <div class="review-list">
        <h3>Customer Review</h3>
-        <div id="loading" class="loading...">Loading</div>
      </div>
       </article>       
 `;
