@@ -343,16 +343,17 @@ main {
   flex: 1;
 
   a {
-    margin-top: 20px;
+    min-width: 44px;
+    min-height: 44px;
+    margin-top: 25px;
     gap: 1rem;
-    font-weight: 600;
-    font-size: medium;
     text-align: center;
     color: rgb(243, 170, 87);
     text-shadow: 1px 1px 3px rgb(0, 0, 0);
     border-bottom: 2px solid rgb(196, 129, 53);
     padding: 10px 20px;
-    display: inline;
+    text-decoration: none;
+    display: block;
   }
 
   h2 {
