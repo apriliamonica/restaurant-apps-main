@@ -43,7 +43,7 @@ const Detail = {
       const id = restodetail.id;
       const nama = document.querySelector('#nama').value;
       const review = document.querySelector('#review').value;
-      const date = new Date();
+      const date = new Date().toISOString;
 
       const tambahRiview = RestoDbSource.getRiview(id, nama, review, date);
 

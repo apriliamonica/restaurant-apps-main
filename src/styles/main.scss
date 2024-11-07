@@ -274,6 +274,10 @@ main {
   padding: 0 8%;
 }
 
+.restoran.fav {
+  margin-top: 8rem;
+}
+
 .list {
   position: relative;
   display: flex;
@@ -503,8 +507,10 @@ main {
 }
 
 button,
-input {
-  padding: 0.5rem 1rem;
+input,
+textarea {
+  min-width: 44px;
+  min-height: 44px;
   border: 2px solid black;
   border-radius: 5px;
   border: none;
@@ -525,41 +531,28 @@ label {
   border-radius: 3%;
 }
 
-#nama {
-  min-width: 44px;
-  min-height: 44px;
-  border: 2px solid black;
-  border-radius: 5px;
-}
-
-textarea {
-  resize: none;
-  border: none;
-  outline: none;
-}
-
+#nama,
 #review {
-  width: 100%;
-  height: 10rem;
-  padding: 1rem 1rem;
   border: 2px solid black;
   border-radius: 5px;
+  padding: 0.5rem 1rem;
+  width: 100%;
 }
 
 .label-judul {
+  font-weight: 400;
   display: block;
   margin-bottom: 0.25rem;
 }
 
 #FormSubmit {
-  min-width: 44px;
-  min-height: 44px;
   background: rgb(247, 244, 224);
   color: rgb(211, 133, 30);
   border: 2px solid black;
   border-radius: 10px;
   cursor: pointer;
   align-self: end;
+  padding: 0.5rem 1rem;
 }
 
 #FormSubmit:hover {
@@ -571,15 +564,9 @@ textarea {
   color: rgb(196, 196, 196);
 }
 
-#loading {
-  margin-block: 1rem;
-  font-size: 1.5rem;
-  text-align: center;
-}
-
 .review-list {
-  margin: 0 auto;
-  padding: 1.5rem;
+  padding: 20px;
+  margin: 20px;
   background-color: #272727;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgb(0, 0, 0, 0.1);

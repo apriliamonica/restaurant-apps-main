@@ -7,7 +7,7 @@ const favorite = {
       <section class="explore-section" id="explore">
         <div class="explore-container">
           <div id="container-resto">
-            <article class="restoran">
+            <article class="restoran fav">
             </article>
           </div>
         </div>
@@ -17,7 +17,7 @@ const favorite = {
 
   async afterRender() {
     const Resto = await FavoriteRestoIdb.getAllResto();
-    const restoContainer = document.querySelector('#explore');
+    const restoContainer = document.querySelector('.restoran');
     Resto.forEach((resto) => {
       restoContainer.innerHTML += createRestoItemTemplate(resto);
     });
