@@ -5,7 +5,7 @@ import {
   createMenusTemplate,
   createReviewTemplate,
 } from '../templates/template-creator';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
+import LikeButtonPresenter  from '../../utils/like-button-presenter';
 const Detail = {
   async render() {
     return `
@@ -57,7 +57,7 @@ const Detail = {
       });
     });
 
-    LikeButtonInitiator.init({
+    LikeButtonPresenter .init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       resto: {
         id: restodetail.id,
