@@ -6,6 +6,7 @@ import {
   createReviewTemplate,
 } from '../templates/template-creator';
 import LikeButtonPresenter  from '../../utils/like-button-presenter';
+import FavoriteRestoIdb from '../src/public/data/favorite-resto-idb';
 const Detail = {
   async render() {
     return `
@@ -59,6 +60,7 @@ const Detail = {
 
     LikeButtonPresenter .init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      favoriteRestoran: FavoriteRestoIdb,
       resto: {
         id: restodetail.id,
         name: restodetail.name,
