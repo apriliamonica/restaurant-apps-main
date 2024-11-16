@@ -28,3 +28,4 @@ skipLinkElem.addEventListener('click', (event) => {
   event.preventDefault();
   document.querySelector('#maincontent').focus();
 });
+
