@@ -49,4 +49,31 @@ describe('Liking A Resto', () => {
 
     await FavoriteRestoIdb.deleteResto(1);
   });
+
+  it('should not add a resto again when its already liked', async () => {
+    await LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      resto: {
+        id: 1,
+      },
+    });
+    // Tambahkan resto dengan ID 1 ke daftar resto yang disukai
+    await FavoriteRestoIdb.putResto({ id: 1 });
+    // Simulasikan pengguna menekan tombol suka resto
+    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
+    // Tidak ada film yang ganda
+    expect(await FavoriteRestoIdb.getAllResto()).toEqual([{ id: 1 }]);
+    await FavoriteRestoIdb.deleteResto(1);
+  });
+
+  xit('should not add a resto when it has no id', async () => {
+    await LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      resto: {},
+    });
+
+    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
+
+    expect(await FavoriteRestoIdb.getAllResto()).toEqual([]);
+  });
 });
