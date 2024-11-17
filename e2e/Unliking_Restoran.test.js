@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 const assert =require('assert');
-Feature('Liking Restoran');
+Feature('Unliking Restoran');
 
 Before(({ I }) => {
   I.amOnPage('/#/favorite');
@@ -13,6 +13,7 @@ Scenario('showing empty liked resto', ({ I }) => {
 Scenario('liking one resto', async ({ I }) => {
   I.see('', '.restoran');
   I.amOnPage('/');
+
 
   I.seeElement('.list .list-info h3 a');
   const firstResto = locate('.list-info h3 a').first();

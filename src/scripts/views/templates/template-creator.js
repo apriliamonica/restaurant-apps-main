@@ -45,10 +45,10 @@ const createRestoDetailTemplate = (resto) => `
         </div>
   </article>
 
-      <article class="riview-resto">
+    <article class="riview-resto">
         <div class="riview-container">
-        <h1>Form Review</h1>
-        <form id="restoForm" autocomplete="off">
+         <h1>Form Review</h1>
+         <form id="restoForm" autocomplete="off">
           <div>
             <label class="label-judul" for="nama">Nama</label>
             <input
@@ -72,11 +72,11 @@ const createRestoDetailTemplate = (resto) => `
           </div>
           <button id="FormSubmit" type="submit">Kirim</button>
         </form>
-    </div>
+     </div>
      <div class="review-list">
        <h3>Customer Review</h3>
      </div>
-      </article>       
+   </article>       
 `;
 
 const createMenusTemplate = (menus) => `
