@@ -103,7 +103,7 @@ const createRestoItemTemplate = (resto) => `
                   <i>${resto.rating}</i>
                 </div>
                 <div class="list-info">
-                <h3><a href="/#/detail/${resto.id}">${resto.name}</a></h3>
+                 <h3><a href="/#/detail/${resto.id}">${resto.name}</a></h3>
                   <h2>${resto.city}</h2>
                   <p>${resto.description}</p>
                 </div>

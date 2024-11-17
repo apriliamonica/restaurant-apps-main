@@ -6,7 +6,7 @@ import {
   createReviewTemplate,
 } from '../templates/template-creator';
 import LikeButtonPresenter  from '../../utils/like-button-presenter';
-import FavoriteRestoIdb from '../src/public/data/favorite-resto-idb';
+import FavoriteRestoIdb from '../../../public/data/favorite-resto-idb';
 const Detail = {
   async render() {
     return `
