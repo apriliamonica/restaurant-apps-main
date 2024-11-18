@@ -71,7 +71,26 @@ module.exports = {
         },
       ],
     }),
-
+    new ImageminWebpackPlugin({
+      plugins: [
+        ImageminMozjpeg({
+          quality: 50,
+          progressive: true,
+        }),
+      ],
+    }),
+    new ImageminWebpWebpackPlugin({
+      config: [
+        {
+          test: /\.(jpe?g|png)/,
+          options: {
+            quality: 50
+          },
+        },
+      ],
+      overrideExtension: true,
+    }),
+    new BundleAnalyzerPlugin(),
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: './sw.bundle.js',
       runtimeCaching: [
@@ -115,25 +134,5 @@ module.exports = {
         },
       ],
     }),
-    new ImageminWebpackPlugin({
-      plugins: [
-        ImageminMozjpeg({
-          quality: 50,
-          progressive: true,
-        }),
-      ],
-    }),
-    new ImageminWebpWebpackPlugin({
-      config: [
-        {
-          test: /\.(jpe?g|png)/,
-          options: {
-            quality: 50
-          },
-        },
-      ],
-      overrideExtension: true,
-    }),
-    new BundleAnalyzerPlugin(),
   ],
 };
