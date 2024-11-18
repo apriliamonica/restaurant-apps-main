@@ -43,5 +43,4 @@ describe('Unliking A Resto', () => {
     document.querySelector('[aria-label="unlike this resto"]').dispatchEvent(new Event('click'));
     expect(await FavoriteRestoIdb.getAllResto()).toEqual([]);
   });
-
 });
