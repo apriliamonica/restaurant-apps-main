@@ -6,7 +6,12 @@ const home = {
     return `
       <section class="home-section" id="home">
         <div class="hero-container">
-          <img src="./images/heros/hero-image_2.jpg" alt="Hero Image" />
+          <picture>
+            <source type="image/webp" srcset="./images/heros/hero-image_2.webp">
+            <source type="image/jpeg" srcset="./images/heros/hero-image_2.jpg">
+            <source media="(max-width: 600px)" srcset="./images/heros/hero-image_2.jpg">
+            <img src="./images/heros/hero-image_2.jpg" alt="Hero Image" />
+          </picture>
           <div class="hero-inner">
             <h1 class="hero-title">Welcome to Mukbang</h1>
             <p class="hero-tagline">
@@ -36,7 +41,11 @@ const home = {
           </div>
         </div>
         <article class="best-food">
+        <picture>
+    <source type="image/webp" srcset="./images/makanan/nasi-image_1.webp">
+    <source type="image/jpeg" srcset="./images/makanan/nasi-image_1.jpg">
           <img src="./images/makanan/nasi-image_1.jpg" alt="Nasi Image" />
+  </picture>
           <h3>Nasi Kuning</h3>
         </article>
       </section>
