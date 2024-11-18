@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import 'regenerator-runtime';
 import '../styles/main.scss';
 import '../styles/responsive.scss';
@@ -5,6 +6,11 @@ import '../styles/responsive.scss';
 import './components/footer-bar.js';
 import './components/header-bar.js';
 import swRegister from './utils/sw-register';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+
+const START = 10;
+const NUMBER_OF_IMAGES = 100;
 
 import App from './views/app';
 

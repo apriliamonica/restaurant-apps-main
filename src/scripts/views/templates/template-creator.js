@@ -94,7 +94,7 @@ const createReviewTemplate = (review) => `
 const createRestoItemTemplate = (resto) => `
    <div class="list">
                <div class="con-img">
-              <img src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}" alt="${
+              <img class="lazyload"src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}" alt="${
   resto.name
 }" />
 </div>

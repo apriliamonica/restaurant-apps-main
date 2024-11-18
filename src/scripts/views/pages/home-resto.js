@@ -10,7 +10,7 @@ const home = {
             <source type="image/webp" srcset="./images/heros/hero-image_2.webp">
             <source type="image/jpeg" srcset="./images/heros/hero-image_2.jpg">
             <source media="(max-width: 600px)" srcset="./images/heros/hero-image_2.jpg">
-            <img src="./images/heros/hero-image_2.jpg" alt="Hero Image" />
+            <img class="lazyload" src="./images/heros/hero-image_2.jpg" alt="Hero Image" />
           </picture>
           <div class="hero-inner">
             <h1 class="hero-title">Welcome to Mukbang</h1>
