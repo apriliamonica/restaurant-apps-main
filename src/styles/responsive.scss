@@ -4,7 +4,8 @@
     width: auto;
     height: auto;
   }
-  .nav-daftar {
+
+  .nav-daftar{
     flex-direction: row;
     position: static;
     justify-content: space-between;
@@ -44,14 +45,18 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .nav-daftar {
-    gap: 4rem;
+  .nav-daftar.active{
+    gap: 5rem;
+    background-color: transparent;
+    backdrop-filter: none;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .nav-daftar {
+  .nav-daftar.active{
     gap: 5rem;
+    background-color: transparent;
+    backdrop-filter: none;
   }
 
   main {

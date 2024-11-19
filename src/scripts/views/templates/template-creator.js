@@ -2,7 +2,7 @@ import CONFIG from '../../globals/config';
 
 const createRestoDetailTemplate = (resto) => `
               <div class="detail-image">
-                <img class="lazyload" src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}" alt="${resto.name
+                <img class="lazyload" data-src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}" alt="${resto.name
 }" />
               </div>
               <div class="detail-title">
@@ -92,7 +92,7 @@ const createReviewTemplate = (review) => `
 const createRestoItemTemplate = (resto) => `
    <div class="list">
                <div class="con-img">
-              <img class="lazyload" src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}" alt="${
+              <img class="lazyload" data-src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}" alt="${
   resto.name
 }" />
 </div>
