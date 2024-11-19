@@ -1,7 +1,6 @@
 import CONFIG from '../../globals/config';
 
 const createRestoDetailTemplate = (resto) => `
-  <article class="detail">
               <div class="detail-image">
                 <img src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}" alt="${
   resto.name
@@ -49,7 +48,7 @@ const createRestoDetailTemplate = (resto) => `
         <div class="riview-container">
          <h1>Form Review</h1>
          <form id="restoForm" autocomplete="off">
-          <div>
+          <div class="nama-review">
             <label class="label-judul" for="nama">Nama</label>
             <input
             id="nama"
@@ -60,7 +59,7 @@ const createRestoDetailTemplate = (resto) => `
               minlength="5"
             />
           </div>
-          <div>
+          <div class="review-text">
             <label class="label-judul" for="review">Review</label>
             <textarea
             id="review"
@@ -86,7 +85,7 @@ const createMenusTemplate = (menus) => `
 const createReviewTemplate = (review) => `
   <div class="review-item">
   <h4>${review.name}</h4> 
-  <p>${review.review}</p> 
+  <p class="review-title">${review.review}</p> 
   <p>${review.date}</p> 
   </div>
   `;
@@ -94,7 +93,7 @@ const createReviewTemplate = (review) => `
 const createRestoItemTemplate = (resto) => `
    <div class="list">
                <div class="con-img">
-              <img class="lazyload"src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}" alt="${
+              <img class="lazyload" src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}" alt="${
   resto.name
 }" />
 </div>

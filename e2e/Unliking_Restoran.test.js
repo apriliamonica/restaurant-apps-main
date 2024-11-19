@@ -10,7 +10,7 @@ Scenario('showing empty liked resto', ({ I }) => {
   I.see('', '.restoran');
 });
 
-Scenario('liking one resto', async ({ I }) => {
+Scenario('liking one resto and than unlike', async ({ I }) => {
   I.see('', '.restoran');
   I.amOnPage('/');
 
