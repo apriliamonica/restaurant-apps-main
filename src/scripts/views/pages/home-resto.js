@@ -45,7 +45,7 @@ const home = {
     <source type="image/webp" srcset="./images/makanan/nasi-image_1.webp">
     <source type="image/jpeg" srcset="./images/makanan/nasi-image_1.jpg">
     <source media="(max-width: 600px)" srcset="./images/makanan/nasi-image_1.jpg">
-          <img src="./images/makanan/nasi-image_1.jpg" alt="Nasi Image" />
+          <img class="lazyload" src="./images/makanan/nasi-image_1.jpg" alt="Nasi Image" />
   </picture>
           <h3>Nasi Kuning</h3>
         </article>

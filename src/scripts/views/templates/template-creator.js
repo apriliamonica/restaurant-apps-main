@@ -2,8 +2,7 @@ import CONFIG from '../../globals/config';
 
 const createRestoDetailTemplate = (resto) => `
               <div class="detail-image">
-                <img src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}" alt="${
-  resto.name
+                <img class="lazyload" src="${CONFIG.MEDIUM_IMAGE_URL + resto.pictureId}" alt="${resto.name
 }" />
               </div>
               <div class="detail-title">
